@@ -1,23 +1,22 @@
 function makePlot(X,FILT,names,clr)
-% makePlot(X, FILT, names, color)
-% X is a column vector
-%FILT is also a column vector
-%filters applied according to columns
-%lengths must match but filters can sum to different values per column
-%filter is POSITIVE ie 1= include, 0=exclude
-%names is a cell array
+%makePlot(X, FILT, names, color)
+%X: column vector of data, with each column a condition to be averaged into a bar plot
+%FILT: column vector of same size as X, with 1=included and 0=excluded; filter applied column by column
+%names: cell array of condition names, corresponding to columns in X
+% clr: optional 3-item vector of RGB values for the color desired for the bars
+% Author: Anna Leshinskaya
+% References: calls errorbar_groups by pierremegevand
+% https://www.mathworks.com/matlabcentral/fileexchange/47250-pierremegevand-errorbar_groups
 
 [n,numCond] =size(X);
 
-
-if(strcmp(clr,'yellow'))
+% default color is yellow
+if(is.empty(clr))
     clr = [249,217,10]/255;
-else
-    clr= [132,132,215]/255;
 end
 
 
-%create vector of SEs for each of the columns in X
+%create vector of standard errors for each of the columns in X
 SE = [];
 xMEAN = [];
 for c=1:numCond
