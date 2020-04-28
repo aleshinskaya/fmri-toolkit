@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+# written by Mitchell Nguyen Feb 2020
 # In[ ]:
 import sys
 import numpy
