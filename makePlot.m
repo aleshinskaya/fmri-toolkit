@@ -1,8 +1,7 @@
 function makePlot(X,FILT,names,clr)
-% makePlot(X, FILT, names, color)
-% X is a column vector
-%FILT is also a column vector
-%filters applied according to columns
+%makePlot(X, FILT, names, color)
+%X: column vector of data, with each column a condition to be averaged into a bar plot
+%FILT: column vector of same size as X, with 1=included and 0=excluded; filter applied column by column
 %lengths must match but filters can sum to different values per column
 %filter is POSITIVE ie 1= include, 0=exclude
 %names is a cell array
