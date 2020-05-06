@@ -11,7 +11,7 @@ function makePlot(X,FILT,names,clr)
 [n,numCond] =size(X);
 
 % default color is yellow
-if(is.empty(clr))
+if(nargin==3)
     clr = [249,217,10]/255;
 end
 
